@@ -3,7 +3,7 @@ const documentController = require("../controllers/DocumentController")
 router.get("/hellotest",documentController.helloworld);
 
 
-router.post("/retrievedocument",documentController.retrievedocument)
+router.post("/storedocument",documentController.storedocument)
 
 
 
