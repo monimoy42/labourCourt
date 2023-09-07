@@ -1,9 +1,11 @@
 const router = require("express").Router();
-const documentController = require("../controllers/DocumentController")
-router.get("/hellotest",documentController.helloworld);
+const DocumentController = require("../controllers/DocumentController");
 
 
-router.post("/storedocument",documentController.storedocument)
+router.get("/hellotest",DocumentController.helloworld);
+
+
+router.post("/storedocument",DocumentController.storedocument)
 
 
 

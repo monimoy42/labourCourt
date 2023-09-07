@@ -6,7 +6,7 @@ exports.helloworld=(req,res) =>{
     res.send("hello world");
 };
 
-exports.storeUser= async (req,res) => {
+exports.storedocument= async (req,res) => {
    try{
 
     let salt = await bcrypt.genSaltSync(10)
