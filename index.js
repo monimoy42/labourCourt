@@ -1,6 +1,7 @@
 const express = require('express');
 const mongoose = require('mongoose');
 //const cors = require("cors");
+const Document = require("./models/Document");
 
 const app = express();
 const port = 3000;
@@ -14,6 +15,28 @@ app.listen(port, () => {
 app.use(express.json());
 app.use("/api/document", require("./routes/document"))
 
+
+const retrieveDataById = async (idToRetrieve) => {
+  try {
+    
+    await connectToMongo();
+
+    
+    const document = await Document.findOne({ _id: idToRetrieve }).maxTimeMS(10000);
+
+    if (document) {
+      console.log("Retrieved document:", document);
+    } else {
+      console.log("Document not found");
+    }
+  } catch (error) {
+    console.error("Error retrieving document:", error);
+  }
+};
+
+
+const idToRetrieve = "64f9a1e6a44b4d1df372a2a5"; 
+retrieveDataById(idToRetrieve);
 
 
 

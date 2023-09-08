@@ -27,3 +27,8 @@ return res.status(400).json({
 });
 }
 }
+
+// MyModel.findOne({ /* query */ }).maxTimeMS(5000).exec(function(err, doc) {
+//     // Handle the result or error here
+//   });
+  
