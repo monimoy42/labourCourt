@@ -1,30 +1,30 @@
 const mongoose = require("mongoose");
-const {Schema} = mongoose;
+const { Schema } = mongoose;
 const DocumentsSchema = new Schema({
-    service_code:{
+    service_code: {
         type: String,
         required: true,
         // unique: true,
     },
 
-    dept_code:{
+    dept_code: {
         type: String,
         required: true,
         // unique: true,
     },
-    pdf_data:{
+    pdf_data: {
         type: String,
         required: true,
         // unique: true,
     },
-    ARN:{
-        type:String,
+    ARN: {
+        type: String,
         required: true,
         unique: true,
     },
 
 
 });
-const Document = mongoose.model("schema", DocumentsSchema);
+const Document = mongoose.model("documents", DocumentsSchema);
 // Document.createIndexes();
 module.exports = Document;
