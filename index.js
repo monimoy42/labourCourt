@@ -55,9 +55,51 @@ const hash = crypto.createHash('sha256').update(jsonString).digest('hex');
 
 console.log('Hash:', hash);
 
-if(pdfData==crypto.Hash){
+if(data==crypto.Hash){
     console.log("Success")
 }
+
+
+
+
+
+
+// const crypto = require('crypto');
+// const algorithm = "AES-256-CBC"; 
+// const key = crypto.randomBytes(32);
+// const iv = crypto.randomBytes(16);
+
+// //Encrypting text
+// function encrypt(text) {
+//    let cipher = crypto.createCipheriv("AES-256-CBC", Buffer.from(key), iv);
+//    let encrypted = cipher.update(text);
+//    encrypted = Buffer.concat([encrypted, cipher.final()]);
+//    return { iv: iv.toString('hex'), encryptedData: encrypted.toString('hex') };
+// }
+
+// // Decrypting text
+// function decrypt(text) {
+//    let iv = Buffer.from(text.iv, 'hex');
+//    let encryptedText = Buffer.from(text.encryptedData, 'hex');
+//    let decipher = crypto.createDecipheriv('aes-256-cbc', Buffer.from(key), iv);
+//    let decrypted = decipher.update(encryptedText);
+//    decrypted = Buffer.concat([decrypted, decipher.final()]);
+//    return decrypted.toString();
+// }
+
+// // Text send to encrypt function
+// var hw = encrypt("Welcome to Tutorials Point...")
+// console.log(hw)
+// console.log(decrypt(hw))
+
+
+
+
+
+
+
+
+
 
 
 
