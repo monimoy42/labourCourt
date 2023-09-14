@@ -11,7 +11,7 @@ const iv = secret.substring(0, 16);
 
 function storeencrtyption(){//async (req, res) => {
 
-const Hash = "dab1fca34f13c4d4b7933eb9dc029917d3f2347338a1c447243d5952cecde846";
+//const Hash = "dab1fca34f13c4d4b7933eb9dc029917d3f2347338a1c447243d5952cecde846";
   
   console.log(Hash)
   //try {
@@ -43,12 +43,7 @@ console.log(encryptedMessage)
     
 
     
-  //   res.json({ encryptedMessage, dataHash });
-  // } catch (error) {
-  //   console.error(error);
-    
-  //   res.status(500).json({ error: 'Internal server error' });
-  // }
+  
 }
 
 
