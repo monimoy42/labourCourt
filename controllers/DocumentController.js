@@ -196,6 +196,108 @@
 
 
 
+// const Document = require('../models/Document');
+// const crypto = require('crypto');
+
+// // Configuration for encryption and decryption
+// const encryptionMethod = 'aes-256-cbc';
+// const secret = 'My32charPasswordAndInitVectorStr'; // Replace with your secret key (32 characters long)
+// const iv = secret.substring(0, 16);
+
+// // Function to decrypt a message
+// const decrypt = function (encryptedMessage, encryptionMethod, secret, iv) {
+//     const decipher = crypto.createDecipheriv(encryptionMethod, secret, iv);
+//     return (
+//         decipher.update(encryptedMessage, 'base64', 'utf8') +
+//         decipher.final('utf8')
+//     );
+// };
+
+// // Function to calculate SHA-256 hash
+// const calculateSHA256Hash = (data) => {
+//     const hash = crypto.createHash('sha256').update(data).digest('hex');
+//     return hash;
+// };
+
+// exports.helloworld = (req, res) => {
+//     res.send('Hello, world!');
+// };
+
+// exports.storedocument = async (req, res) => {
+//     try {
+//         const concatenatedData = req.body.service_code +
+//             req.body.pdf_data +
+//             req.body.ARN +
+//             req.body.dept_code;
+
+//         // Calculate SHA-256 hash
+//         const dataHash = calculateSHA256Hash(concatenatedData);
+
+//         // Decrypt encryptedMessage
+//         const DecryptedData = decrypt(req.body.encryptedMessage, encryptionMethod, secret, iv);
+
+//         console.log('Data Hash:', dataHash);
+//         console.log('Decrypted Data:', DecryptedData);
+
+//         // Add your code here to store or process the data further
+
+//         res.status(200).json({ success: true, dataHash, DecryptedData });
+//     } catch (error) {
+//         console.error('Error storing document:', error);
+//         res.status(500).json({ success: false, error: 'Internal Server Error' });
+//     }
+// };
+
+// exports.retrieveDataById = async (req, res) => {
+//     try {
+//         const document = await Document.findById(req.params.id);
+
+//         // Decrypt ARN
+//         document.ARN = decrypt(document.ARN, encryptionMethod, secret, iv);
+
+//         res.send(document);
+//     } catch (error) {
+//         console.error('Error retrieving document:', error);
+//         res.status(400).json({ success: false, message: 'Error retrieving document' });
+//     }
+// };
+
+// exports.retrieveAllData = async (req, res) => {
+//     try {
+//         const documents = await Document.find({});
+
+//         // Decrypt ARN for all documents
+//         documents.forEach((document) => {
+//             document.ARN = decrypt(document.ARN, encryptionMethod, secret, iv);
+//         });
+
+//         res.send(documents);
+//     } catch (error) {
+//         console.error('Error retrieving documents:', error);
+//         res.status(400).json({ success: false, message: 'Error retrieving documents' });
+//     }
+// };
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
