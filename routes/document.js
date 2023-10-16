@@ -1,22 +1,10 @@
 const router = require("express").Router();
 const DocumentController = require("../controllers/DocumentController");
-//const { ObjectId } = require('mongodb');
 
+router.post("/storedocument", DocumentController.storedocument);
 
-//const objectId = new ObjectId();
+// router.get("/retrieveAllData", DocumentController.retrieveAllData);
 
-
-
-
-router.get("/hellotest", DocumentController.helloworld);
-
-
-router.post("/storedocument", DocumentController.storedocument)
-
-router.get("/retrieveAllData", DocumentController.retrieveAllData)
-
-router.get("/retrieveDataById/:id", DocumentController.retrieveDataById)
-
-
+router.get("/retrieveDataById/:id", DocumentController.retrieveDataById);
 
 module.exports = router;
