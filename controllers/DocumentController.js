@@ -17,7 +17,7 @@ const decrypt = function (encryptedMessage, encryptionMethod, secret, iv) {
 exports.storedocument = async (req, res) => {
   const { service_code, pdf_data, ARN, dept_code } = req.body;
 
-  const concatenatedData = service_code + pdf_data + ARN + dept_code;
+  const concatenatedData = service_code + pdf_data  + dept_code + ARN;
 
   const dataHash = crypto
     .createHash("sha256")
